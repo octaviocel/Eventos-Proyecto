@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsdetalle" targetNamespace="http://tempuri.org/dsdetalle.xsd" xmlns:mstns="http://tempuri.org/dsdetalle.xsd" xmlns="http://tempuri.org/dsdetalle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_EVENTOSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_EVENTOSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FormularioEventos.Properties.Settings.GlobalReference.Default.BD_EVENTOSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataFucionDatalleTableAdapter" GeneratorDataComponentClassName="DataFucionDatalleTableAdapter" Name="DataFucionDatalle" UserDataComponentName="DataFucionDatalleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_EVENTOSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EVENTO.NOEVENTO, EVENTO.INVITADOS, EVENTO.COSTOEVENTO, EVENTO.TIPOEVENTO, PLATILLOS.NOMBREP, GUARNICIONES.NOMBREG, POSTRES.NOMBREPO, EVENTO.BEBIDAS, EMPLEADOS.NOMBRE, 
+                         EMPLEADOS.APELLIDO, EMPLEADOS.PUESTO
+FROM            EVENTO INNER JOIN
+                         PLATILLOS ON EVENTO.IDPLATILLO = PLATILLOS.ID INNER JOIN
+                         GUARNICIONES ON EVENTO.IDGUARNICION = GUARNICIONES.ID INNER JOIN
+                         POSTRES ON EVENTO.IDPOSTRE = POSTRES.ID INNER JOIN
+                         EMPLEADOSXEVENTO ON EVENTO.NOEVENTO = EMPLEADOSXEVENTO.NOEVENTO INNER JOIN
+                         EMPLEADOS ON EMPLEADOSXEVENTO.IDENTIFICADOR = EMPLEADOS.ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOEVENTO" DataSetColumn="NOEVENTO" />
+              <Mapping SourceColumn="INVITADOS" DataSetColumn="INVITADOS" />
+              <Mapping SourceColumn="COSTOEVENTO" DataSetColumn="COSTOEVENTO" />
+              <Mapping SourceColumn="TIPOEVENTO" DataSetColumn="TIPOEVENTO" />
+              <Mapping SourceColumn="NOMBREP" DataSetColumn="NOMBREP" />
+              <Mapping SourceColumn="NOMBREG" DataSetColumn="NOMBREG" />
+              <Mapping SourceColumn="NOMBREPO" DataSetColumn="NOMBREPO" />
+              <Mapping SourceColumn="BEBIDAS" DataSetColumn="BEBIDAS" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="APELLIDO" DataSetColumn="APELLIDO" />
+              <Mapping SourceColumn="PUESTO" DataSetColumn="PUESTO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EMPLEADOSTableAdapter" GeneratorDataComponentClassName="EMPLEADOSTableAdapter" Name="EMPLEADOS" UserDataComponentName="EMPLEADOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_EVENTOSConnectionString (Settings)" DbObjectName="BD_EVENTOS.dbo.EMPLEADOS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [EMPLEADOS] WHERE (([ID] = @Original_Expr1) AND ([NOMBRE] = @Original_NOMBRE) AND ([PUESTO] = @Original_PUESTO) AND ([APELLIDO] = @Original_APELLIDO) AND ([TARIFA] = @Original_TARIFA))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Expr1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Expr1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PUESTO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PUESTO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_APELLIDO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="APELLIDO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TARIFA" Precision="5" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TARIFA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [EMPLEADOS] ([ID], [NOMBRE], [PUESTO], [APELLIDO], [TARIFA]) VALUES (@Expr1, @NOMBRE, @PUESTO, @APELLIDO, @TARIFA);
+SELECT ID AS Expr1, NOMBRE, PUESTO, APELLIDO, TARIFA FROM EMPLEADOS WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Expr1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Expr1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PUESTO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PUESTO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@APELLIDO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="APELLIDO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TARIFA" Precision="5" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TARIFA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="BD_EVENTOS.dbo.EMPLEADOS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Expr1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID AS Expr1, NOMBRE, PUESTO, APELLIDO, TARIFA
+FROM            EMPLEADOS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [EMPLEADOS] SET [ID] = @Expr1, [NOMBRE] = @NOMBRE, [PUESTO] = @PUESTO, [APELLIDO] = @APELLIDO, [TARIFA] = @TARIFA WHERE (([ID] = @Original_Expr1) AND ([NOMBRE] = @Original_NOMBRE) AND ([PUESTO] = @Original_PUESTO) AND ([APELLIDO] = @Original_APELLIDO) AND ([TARIFA] = @Original_TARIFA));
+SELECT ID AS Expr1, NOMBRE, PUESTO, APELLIDO, TARIFA FROM EMPLEADOS WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Expr1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Expr1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PUESTO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PUESTO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@APELLIDO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="APELLIDO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TARIFA" Precision="5" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TARIFA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Expr1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Expr1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PUESTO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PUESTO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_APELLIDO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="APELLIDO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TARIFA" Precision="5" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="TARIFA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="BD_EVENTOS.dbo.EMPLEADOS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Expr1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="PUESTO" DataSetColumn="PUESTO" />
+              <Mapping SourceColumn="APELLIDO" DataSetColumn="APELLIDO" />
+              <Mapping SourceColumn="TARIFA" DataSetColumn="TARIFA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsdetalle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsdetalle" msprop:Generator_UserDSName="dsdetalle">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataFucionDatalle" msprop:Generator_TableClassName="DataFucionDatalleDataTable" msprop:Generator_TableVarName="tableDataFucionDatalle" msprop:Generator_TablePropName="DataFucionDatalle" msprop:Generator_RowDeletingName="DataFucionDatalleRowDeleting" msprop:Generator_RowChangingName="DataFucionDatalleRowChanging" msprop:Generator_RowEvHandlerName="DataFucionDatalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DataFucionDatalleRowDeleted" msprop:Generator_UserTableName="DataFucionDatalle" msprop:Generator_RowChangedName="DataFucionDatalleRowChanged" msprop:Generator_RowEvArgName="DataFucionDatalleRowChangeEvent" msprop:Generator_RowClassName="DataFucionDatalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOEVENTO" msprop:Generator_ColumnVarNameInTable="columnNOEVENTO" msprop:Generator_ColumnPropNameInRow="NOEVENTO" msprop:Generator_ColumnPropNameInTable="NOEVENTOColumn" msprop:Generator_UserColumnName="NOEVENTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INVITADOS" msprop:Generator_ColumnVarNameInTable="columnINVITADOS" msprop:Generator_ColumnPropNameInRow="INVITADOS" msprop:Generator_ColumnPropNameInTable="INVITADOSColumn" msprop:Generator_UserColumnName="INVITADOS" type="xs:int" />
+              <xs:element name="COSTOEVENTO" msprop:Generator_ColumnVarNameInTable="columnCOSTOEVENTO" msprop:Generator_ColumnPropNameInRow="COSTOEVENTO" msprop:Generator_ColumnPropNameInTable="COSTOEVENTOColumn" msprop:Generator_UserColumnName="COSTOEVENTO" type="xs:decimal" />
+              <xs:element name="TIPOEVENTO" msprop:Generator_ColumnVarNameInTable="columnTIPOEVENTO" msprop:Generator_ColumnPropNameInRow="TIPOEVENTO" msprop:Generator_ColumnPropNameInTable="TIPOEVENTOColumn" msprop:Generator_UserColumnName="TIPOEVENTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBREP" msprop:Generator_ColumnVarNameInTable="columnNOMBREP" msprop:Generator_ColumnPropNameInRow="NOMBREP" msprop:Generator_ColumnPropNameInTable="NOMBREPColumn" msprop:Generator_UserColumnName="NOMBREP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBREG" msprop:Generator_ColumnVarNameInTable="columnNOMBREG" msprop:Generator_ColumnPropNameInRow="NOMBREG" msprop:Generator_ColumnPropNameInTable="NOMBREGColumn" msprop:Generator_UserColumnName="NOMBREG">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBREPO" msprop:Generator_ColumnVarNameInTable="columnNOMBREPO" msprop:Generator_ColumnPropNameInRow="NOMBREPO" msprop:Generator_ColumnPropNameInTable="NOMBREPOColumn" msprop:Generator_UserColumnName="NOMBREPO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BEBIDAS" msprop:Generator_ColumnVarNameInTable="columnBEBIDAS" msprop:Generator_ColumnPropNameInRow="BEBIDAS" msprop:Generator_ColumnPropNameInTable="BEBIDASColumn" msprop:Generator_UserColumnName="BEBIDAS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" msprop:Generator_UserColumnName="APELLIDO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PUESTO" msprop:Generator_ColumnVarNameInTable="columnPUESTO" msprop:Generator_ColumnPropNameInRow="PUESTO" msprop:Generator_ColumnPropNameInTable="PUESTOColumn" msprop:Generator_UserColumnName="PUESTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EMPLEADOS" msprop:Generator_TableClassName="EMPLEADOSDataTable" msprop:Generator_TableVarName="tableEMPLEADOS" msprop:Generator_TablePropName="EMPLEADOS" msprop:Generator_RowDeletingName="EMPLEADOSRowDeleting" msprop:Generator_RowChangingName="EMPLEADOSRowChanging" msprop:Generator_RowEvHandlerName="EMPLEADOSRowChangeEventHandler" msprop:Generator_RowDeletedName="EMPLEADOSRowDeleted" msprop:Generator_UserTableName="EMPLEADOS" msprop:Generator_RowChangedName="EMPLEADOSRowChanged" msprop:Generator_RowEvArgName="EMPLEADOSRowChangeEvent" msprop:Generator_RowClassName="EMPLEADOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PUESTO" msprop:Generator_ColumnVarNameInTable="columnPUESTO" msprop:Generator_ColumnPropNameInRow="PUESTO" msprop:Generator_ColumnPropNameInTable="PUESTOColumn" msprop:Generator_UserColumnName="PUESTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" msprop:Generator_UserColumnName="APELLIDO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TARIFA" msprop:Generator_ColumnVarNameInTable="columnTARIFA" msprop:Generator_ColumnPropNameInRow="TARIFA" msprop:Generator_ColumnPropNameInTable="TARIFAColumn" msprop:Generator_UserColumnName="TARIFA" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataFucionDatalle" />
+      <xs:field xpath="mstns:NOEVENTO" />
+    </xs:unique>
+    <xs:unique name="EMPLEADOS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EMPLEADOS" />
+      <xs:field xpath="mstns:Expr1" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
